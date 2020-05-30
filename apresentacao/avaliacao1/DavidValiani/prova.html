@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova</title>
+    <link rel="stylesheet" href="css/stylesheet.css">
+</head>
+<body>
+	<div class="wrapper">
+	  
+	  <div class="box a">
+	  <img class="image" src="/progweb_grupo4/apresentacao/avaliacao1/DavidValiani/img/logo_fatec.jpg" alt="" width="200px" height="100px" style=" float: left;">
+            <h1 style="text-align: right; font-size: 40px; margin: 0px 0px;">Programação Web</h1>
+	  </div>
+	  
+	  <div class="box b">
+	  <h1 style="text-align: left; font-size: 40px; margin: 0px 0px;">Prova</h1>
+	  <img class="image" src="/progweb_grupo4/apresentacao/avaliacao1/DavidValiani/img/logo_cps.jpg" alt="">
+ 
+	  </div>
+	  
+	  <div class="box c">
+  
+		<nav>
+			<h2>Atividades Menu</h2>
+				<a href wm-nav="/progweb_grupo4/apresentacao/avaliacao1/DavidValiani/paginas/htmlintro.html">HTML Introduction</a> <br>
+				<a href wm-nav="/progweb_grupo4/apresentacao/avaliacao1/DavidValiani/paginas/htmlid.html">HTML ID </a><br>
+				<a href wm-nav="/progweb_grupo4/apresentacao/avaliacao1/DavidValiani/paginas/htmlclass.html">HTML Class</a><br>
+				<a href wm-nav="/progweb_grupo4/apresentacao/avaliacao1/DavidValiani/paginas/htmlforms.html">HTML Forms</a><br>
+				<a href wm-nav="/progweb_grupo4/apresentacao/avaliacao1/DavidValiani/paginas/cssintroduction.html">CSS Introduction</a><br>
+				<a href wm-nav="/progweb_grupo4/apresentacao/avaliacao1/DavidValiani/paginas/cssborders.html">CSS Borders</a><br>
+				<a href wm-nav="/progweb_grupo4/apresentacao/avaliacao1/DavidValiani/paginas/cssmargins.html">CSS Margins</a><br>
+				<a href wm-nav="/progweb_grupo4/apresentacao/avaliacao1/DavidValiani/paginas/csspadding.html">CSS Padding</a><br>
+			<h2>Atividades Tabela</h2>
+				<a href wm-nav="/progweb_grupo4/apresentacao/avaliacao1/DavidValiani/paginas/listatabelas.html">Lista de produtos</a>
+		</nav>	
+        </div>
+        <div class="box d" id="conteudo">
+            <img class="image" src="/progweb_grupo4/apresentacao/avaliacao1/DavidValiani/img/div_conteudo.jpg" width="500px" height="350px">      
+        </div>
+			<div class="box e">
+				<p>Fatec Taquaritinga<br>
+				Av. Dr. Flavio Henrique Lemos, 585 Portal Itamaracá, Taquaritinga - SP CEP:15906-522</p>
+			</div>
+
+        <script>
+            document.querySelectorAll('[wm-nav]').forEach(link => {
+                const conteudo = document.getElementById('conteudo')
+
+                link.onclick = function (e) {
+                    e.preventDefault()
+                    fetch(link.getAttribute('wm-nav'))
+                        .then(resp => resp.text())
+                        .then(html => conteudo.innerHTML = html)
+                }
+            })
+        </script>
+</body>
+</html>
